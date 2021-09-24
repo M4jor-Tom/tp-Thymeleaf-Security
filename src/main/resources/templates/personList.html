@@ -8,7 +8,10 @@
    <body>
       <h1>Person List</h1>
 	  <a href="#" th:href="@{/index}">Index</a>
-      <a href="addPerson.html"  th:href="@{/addPerson}">Add Person</a>
+      <div sec:authorize="hasRole('ROLE_ADMIN')">
+        <a href="addPerson.html"  th:href="@{/addPerson}">Add Person</a>
+      </div>
+      
 <!--       <a href="addPerson">Add Person</a> -->
       <br/><br/>
       <div>
