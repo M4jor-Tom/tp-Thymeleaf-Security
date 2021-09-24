@@ -6,3 +6,5 @@
 *.jar
 
 target/tp-Thymeleaf-Security-0.0.1-SNAPSHOT.jar.original
+
+target/
