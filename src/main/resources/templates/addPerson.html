@@ -7,6 +7,7 @@
    </head>
    <body>
       <h1>Create a Person:</h1>
+	  <a href="#" th:href="@{/personList}">Person List</a>
           
       <form th:action="@{/addPerson}"
          th:object="${personForm}" method="POST">
