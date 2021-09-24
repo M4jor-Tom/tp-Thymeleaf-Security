@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class MainController {
 
 	// Login form
-	@RequestMapping(value = { "/", "/index", "/login" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/", "/login" }, method = RequestMethod.GET)
 	public String login() {
 		return "login";
 	}
@@ -21,4 +21,9 @@ public class MainController {
 		return "login";
 	}
 
+	//Index page
+	@RequestMapping("/index")
+	public String index(Model model) {
+		return "index";
+	}
 }
