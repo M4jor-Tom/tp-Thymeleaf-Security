@@ -27,7 +27,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	      	.authorizeRequests()
 	      	.antMatchers("/login").permitAll()
 	      	.antMatchers("/logout").permitAll()
-	      	.antMatchers("/index").authenticated();
+	      	.anyRequest().authenticated();
 	}
 	
 	@Bean
