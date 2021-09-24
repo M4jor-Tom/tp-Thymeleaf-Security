@@ -25,9 +25,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	      	.logoutSuccessUrl("/login")
 	      .and()
 	      	.authorizeRequests()
-	      	.antMatchers("/login").permitAll()
-	      	.antMatchers("/logout").permitAll()
-	      	.anyRequest().authenticated();
+	      	.antMatchers("/index").authenticated()
+	      	.antMatchers("/personList").authenticated()
+	      	.antMatchers("/addPerson").authenticated()
+	      	.anyRequest().permitAll();
 	}
 	
 	@Bean
