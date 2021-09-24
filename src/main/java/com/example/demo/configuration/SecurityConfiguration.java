@@ -31,13 +31,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		UserDetails user =
 			 User.withDefaultPasswordEncoder()
 				.username("user")
-				.password("user")
+				.password("mdp")
 				.roles("USER")
 				.build();
 		UserDetails admin =
 				User.withDefaultPasswordEncoder()
 				.username("admin")
-				.password("admin")
+				.password("mdp")
 				.roles("ADMIN")
 				.build();
 
