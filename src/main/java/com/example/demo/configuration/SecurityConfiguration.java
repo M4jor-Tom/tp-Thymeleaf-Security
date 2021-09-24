@@ -8,6 +8,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
@@ -19,8 +20,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	        .defaultSuccessUrl("/personList")
 	        .failureUrl("/login-error")
 	      .and()
-	        .logout()
-	        .logoutSuccessUrl("/index");
+	      	.logout()
+	      	.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+	      	.logoutSuccessUrl("/login");
 	}
 	@Bean
 	@Override
